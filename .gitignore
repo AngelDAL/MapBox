@@ -1,0 +1,11 @@
+# Entorno
+.env
+.env.*
+!.env.example
+
+# Runtime/logs locales
+.runtime/
+.logs/
+
+# Dependencias o binarios temporales
+*.log

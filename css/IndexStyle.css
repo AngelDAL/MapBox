@@ -1,0 +1,146 @@
+#mapa {
+    height: 80vh;
+}
+
+/*
+.mapboxgl-ctrl-logo {
+    display: none;
+}
+
+.mapboxgl-ctrl-bottom-left {
+    display: none;
+}
+
+.mapboxgl-ctrl-bottom-right {
+    display: none;
+}
+*/
+.rojo {
+    color: red;
+}
+
+
+#instructions {
+    z-index: 10;
+    position: absolute;
+    margin: 20px;
+    width: 25%;
+    top: 20%;
+    bottom: 20%;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: scroll;
+    font-family: sans-serif;
+}
+
+.Espaciado {
+    margin-bottom: 20px;
+}
+
+.Espacia2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Redondeado {
+    transition: .3s;
+}
+
+.Redondeado:hover {
+
+    transition: .3s;
+}
+
+#ImagenFondo {
+
+    object-fit: cover;
+}
+
+#SolicitarViaje {
+    z-index: 4;
+    position: absolute;
+    margin: auto;
+    width: 80%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 5px;
+    top: 20vh;
+
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(5.4px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+@media only screen and (max-width: 600px) {
+
+    #mapa {
+        height: 60vh;
+    }
+
+    #SolicitarViaje {
+        width: 100%;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+
+    }
+}
+
+.ListaSugerencias {
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+    z-index: 5;
+}
+
+.ListaSugerencias2 {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+    z-index: 6;
+}
+
+#MapContainer {
+    width: 100%;
+}
+
+
+#InicioSesionDiv {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

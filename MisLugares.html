@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio de sesion</title>
+    <script src="js/jquery.min.js"></script>
+    <!--Fontasome-->
+    <link href="resorces/fontawesome/css/all.css" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/IndexStyle.css">
+    <link rel="stylesheet" href="css/EstilosGenerales.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+            <a href="index.html"
+                class="navbar-brand d-flex align-items-center my-2 ml-2 me-lg-auto text-white text-decoration-none">
+                <img src="resorces/Logo2.png" width="100px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+                aria-controls="offcanvasNavbar2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-top text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+                aria-labelledby="offcanvasNavbar2Label">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Opciones</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="mr-1">
+                            <a href="#" class="nav-link text-secondary text-center">
+                                <p class="h6"><i class="fa fa-home" aria-hidden="true"></i></p>
+                                Home
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item dropdown text-center mr-1">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <p class="h6"><i class="fa-solid fa-gears"></i></p>
+                                Opciones
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li id="IniciarSesionMenu" class="align-self-center text-center">
+                            <div class="text-center">
+                                <a type="button" href="IniciarSesion.html" class="btn btn-light text-dark me-2 m-1"><i
+                                        class="fa fa-user-circle" aria-hidden="true"></i> Iniciar sesión</a>
+                                <a type="button" href="Registro.html" class="btn btn-primary  m-1">Registrarse</a>
+                            </div>
+                        </li>
+                        <li id="UserData" style="display: none;" class="align-self-center text-center">
+                            <div class="dropdown">
+                                <a href="#" class="d-block text-white text-decoration-none dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://elcomercio.pe/resizer/pfVziOV4X8Vu9nwknDc-oNItlB8=/1200x900/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6Y2EDIISGFGVFANEVDCR5LCG34.jpg"
+                                        alt="" class="rounded-circle" width="32" height="32"> <b><span id="NombreNavBar"
+                                            class="ml-1 mr-1">Mi
+                                            cuenta</span></b>
+                                </a>
+                                <ul class="dropdown-menu text-small">
+                                    <li><a class="dropdown-item" href="MisLugares.html">Mis lugares</a></li>
+                                    <li><a class="dropdown-item" href="#">Historial</a></li>
+                                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>
+                                            Cerrar sesion</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <div class="d-flex align-items-center p-3 text-white bg-purple shadow-sm bg-purple">
+            <p class=" h2 mr-3"><i class="fa-solid fa-map-location-dot"></i></p>
+            <div class="lh-1">
+                <h1 class="h6 mb-0 text-white lh-1">Tus viajes y destinos</h1>
+                <small> <i>Puedes guardar tus lugares favoritos y acceder a ellos cuando desees</i> </small>
+            </div>
+        </div>
+
+
+
+        <div class="list-group list-group-radio d-grid gap-2 border-0">
+            <p class="text-center text-muted">
+                Selecciona tu lugar preferido de la lista y guardalo para acceder a él cuando desees.
+            </p>
+
+            <div class="position-relative">
+                <input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio"
+                    name="listGroupRadioGrid" id="listGroupRadioGrid1" value="" checked>
+                <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid1">
+                    <strong class="fw-semibold"> <i class="fas fa-map-marker-alt"></i> Manuel M. Moreno </strong>
+                    <span class="d-block small opacity-75">Manuel M. Moreno 250 Miguel Hidalgo, Irapuato,
+                        Guanajuato</span>
+                </label>
+            </div>
+
+
+            <div class="position-relative">
+                <input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio"
+                    name="listGroupRadioGrid" id="listGroupRadioGrid3" value="">
+                <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid3">
+                    <strong class="fw-semibold"> <i class="fas fa-map-marker-alt"></i> Manuel M. Moreno </strong>
+                    <span class="d-block small opacity-75">Manuel M. Moreno 250 Miguel Hidalgo, Irapuato,
+                        Guanajuato</span>
+                </label>
+            </div>
+
+            <div class="position-relative">
+                <label class="list-group-item py-3 pe-5">
+                    <strong class="fw-semibold"> <i class="fa fa-plus" aria-hidden="true"></i> Agregar ubicación
+                    </strong>
+                    <span class="d-block small opacity-75">¿No aparece una ubicación que deseas? ¡Agregala! </span>
+                </label>
+            </div>
+
+        </div>
+        <hr>
+
+        <script src="js/app.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+    </main>
+</body>
+
+</html>
