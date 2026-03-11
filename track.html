@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rastreo en tiempo real</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="css/IndexStyle.css" rel="stylesheet">
+    <style>
+        body, html { height: 100%; margin: 0; }
+        #mapa { position: absolute; top: 0; bottom: 0; width: 100%; }
+        #hud {
+            position: absolute; top: 12px; left: 12px; z-index: 2;
+            background: rgba(255,255,255,0.9); padding: 10px; border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        #speedValue { font-size: 28px; font-weight: 700; }
+        #controls { margin-top: 8px; }
+    </style>
+</head>
+
+<body>
+    <!-- Carga el token desde el backend -->
+    <script src="php/AppConfig.php"></script>
+
+    <div id="mapa"></div>
+
+    <div id="hud">
+        <div>Velocidad</div>
+        <div id="speedValue">0 km/h</div>
+        <div id="controls">
+            <button id="startBtn" class="btn btn-sm btn-primary">Iniciar</button>
+            <button id="stopBtn" class="btn btn-sm btn-secondary">Detener</button>
+        </div>
+        <div id="status" style="margin-top:6px;font-size:12px;color:#444"></div>
+    </div>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <script src="js/track.js"></script>
+</body>
+
+</html>
