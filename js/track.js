@@ -37,6 +37,38 @@
         el.innerText = `${kmh.toFixed(1)} km/h`;
     }
 
+    function updateCoordinates(lat, lon) {
+        document.getElementById('latValue').innerText = lat.toFixed(6);
+        document.getElementById('lonValue').innerText = lon.toFixed(6);
+    }
+
+    function fetchWeatherData(lat, lon) {
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m&temperature_unit=celsius`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.current) {
+                    document.getElementById('tempValue').innerText = `${data.current.temperature_2m}°C`;
+                    document.getElementById('humidityValue').innerText = `${data.current.relative_humidity_2m}%`;
+                }
+            })
+            .catch(err => {
+                console.error('Error obtener datos de clima:', err);
+            });
+    }
+
+    function fetchWeightData(lat, lon) {
+        fetch(`php/Usuarios/ObtenerPeso.php`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.peso) {
+                    document.getElementById('weightValue').innerText = `${data.peso} kg`;
+                }
+            })
+            .catch(err => {
+                console.error('Error obtener peso:', err);
+            });
+    }
+
     function updatePosition(pos) {
         const lat = pos.coords.latitude;
         const lon = pos.coords.longitude;
@@ -46,6 +78,15 @@
         mapa.flyTo({ center: [lon, lat], speed: 0.4, zoom: 17 });
         if (!marker) marker = new mapboxgl.Marker().setLngLat([lon, lat]).addTo(mapa);
         else marker.setLngLat([lon, lat]);
+
+        // Mostrar coordenadas exactas
+        updateCoordinates(lat, lon);
+
+        // Obtener datos de clima y peso
+        if (!lastPos || Math.abs(lat - lastPos.lat) > 0.001 || Math.abs(lon - lastPos.lon) > 0.001) {
+            fetchWeatherData(lat, lon);
+            fetchWeightData(lat, lon);
+        }
 
         // compute speed
         let speed_m_s = pos.coords.speed; // may be null

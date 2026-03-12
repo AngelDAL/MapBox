@@ -16,7 +16,13 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
         #speedValue { font-size: 28px; font-weight: 700; }
-        #controls { margin-top: 8px; }
+        .info-row {
+            display: flex; justify-content: space-between; margin-top: 8px;
+            font-size: 12px; line-height: 1.4;
+        }
+        .info-label { font-weight: 600; color: #333; margin-right: 8px; }
+        .info-value { color: #666; }
+        #controls { margin-top: 12px; }
     </style>
 </head>
 
@@ -29,6 +35,24 @@
     <div id="hud">
         <div>Velocidad</div>
         <div id="speedValue">0 km/h</div>
+        
+        <div class="info-row" style="margin-top: 12px; border-top: 1px solid #ddd; padding-top: 8px;">
+            <div><span class="info-label">Lat:</span><span class="info-value" id="latValue">-</span></div>
+            <div><span class="info-label">Lon:</span><span class="info-value" id="lonValue">-</span></div>
+        </div>
+        
+        <div class="info-row">
+            <div><span class="info-label">Temperatura:</span><span class="info-value" id="tempValue">-</span></div>
+        </div>
+        
+        <div class="info-row">
+            <div><span class="info-label">Humedad:</span><span class="info-value" id="humidityValue">-</span></div>
+        </div>
+        
+        <div class="info-row">
+            <div><span class="info-label">Peso:</span><span class="info-value" id="weightValue">-</span></div>
+        </div>
+        
         <div id="controls">
             <button id="startBtn" class="btn btn-sm btn-primary">Iniciar</button>
             <button id="stopBtn" class="btn btn-sm btn-secondary">Detener</button>
